@@ -1,0 +1,82 @@
+<?php
+
+namespace App\Http\Controllers\DataTable;
+
+use App\Helpers\SiteContextHelper;
+use App\Http\Resources\DataTable\PartyDataTableResource;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\Request;
+
+class PartyDataTableController extends DataTableController
+{
+    protected $hidden_fields = [
+        // List any fields that should be returned in responses but not displayed by the UI
+    ];
+
+    protected $field_labels = [
+        // This assosciative array can be used to override the labels of fields in the response
+        // The key is the field name and the value is the label.
+    ];
+
+    protected $sortable_fields = [
+        // List any fields that can be sorted here
+    ];
+
+    protected $searchable_fields = [
+        // List any fields that can be searched here
+    ];
+
+    protected $filterable_fields = [
+        // List any fields that can be filtered here
+    ];
+
+    // If you set a resource class here, it will be used to wrap the data in the response instead
+    // of the DefaultDataTableResource
+    protected $resource_class = DefaultDataTableResource::class;
+
+    public function dataQuery(Request $request): Builder
+    {
+        // You MUST include a data table query method that returns a Builder instance here
+        // This will be used to fetch the data for the table.
+        $query = Model::query();
+
+        return $query;
+    }
+
+
+    public function searchTitle($query, $search)
+    {
+        $query->orWhere("title", 'like', '%' . $search . '%');
+    }
+
+    public function searchOwnerName($query, $search)
+    {
+        $query->orWhere("users.name", 'like', '%' . $search . '%');
+    }
+
+    public function searchVenueName($query, $search)
+    {
+        $query->orWhere("venues.name", 'like', '%' . $search . '%');
+    }
+
+    public function sortByTitle($query, $direction = "ASC")
+    {
+        $query->orderBy("title", $direction);
+    }
+
+    public function sortByOwnerName($query, $direction = "ASC")
+    {
+        $query->orderBy("users.name", $direction);
+    }
+
+    public function sortByVenueName($query, $direction = "ASC")
+    {
+        $query->orderBy("venues.name", $direction);
+    }
+
+    public function sortByDateTime($query, $direction = "ASC")
+    {
+        $query->orderBy("date_time", $direction)
+            ->orderBy("starts_at", $direction);
+    }
+}
