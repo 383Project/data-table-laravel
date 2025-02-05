@@ -8,20 +8,7 @@ This back end portion focusses on providing a good Laravel-esque interface you c
 
 ## Installation
 
-Because this is a private repository, you will need to add the following to your `composer.json` file:
-
-```json
-{
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:383Project/data-table-laravel.git"
-        }
-    ]
-}
-```
-
-Then you can install the package via composer:
+You can install the package via composer:
 
 ```bash
 composer require SteJaySulli/laravel-react-data-table
