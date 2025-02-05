@@ -1,0 +1,42 @@
+<?php
+
+namespace {{ namespace }};
+
+use SteJaySulli\LaravelDataTable\Http\Controllers\DataTableController{{ as_datatable_controller }};
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\Request;
+use {{ namespaced_model }};
+
+class {{ class }} extends {{ datatable_controller }}
+{
+    protected $hidden_fields = [
+        // List any fields that should be returned in responses but not displayed by the UI
+    ];
+
+    protected $field_labels = [
+        // This assosciative array can be used to override the labels of fields in the response
+        // The key is the field name and the value is the label.
+    ];
+
+    protected $sortable_fields = [
+        // List any fields that can be sorted here
+    ];
+
+    protected $searchable_fields = [
+        // List any fields that can be searched here
+    ];
+
+    protected $filterable_fields = [
+        // List any fields that can be filtered here
+    ];
+
+    // You should add in your resource class here if you have one:
+    // protected $resource_class = DataTableResource::class;
+
+    public function dataQuery(Request $request): Builder
+    {
+        // You MUST include a data table query method that returns a Builder instance here
+        // This will be used to fetch the data for the table.
+        return {{ model }}::query();
+    }
+}

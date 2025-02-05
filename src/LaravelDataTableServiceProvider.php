@@ -4,6 +4,7 @@ namespace SteJaySulli\LaravelDataTable;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use SteJaySulli\LaravelDataTable\Commands\DataTableMakeCommand;
 use SteJaySulli\LaravelDataTable\Commands\LaravelDataTableCommand;
 
 class LaravelDataTableServiceProvider extends PackageServiceProvider
@@ -20,6 +21,7 @@ class LaravelDataTableServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasViews()
             ->hasMigration('create_data_table_laravel_table')
+            ->hasCommand(DataTableMakeCommand::class)
             ->hasCommand(LaravelDataTableCommand::class);
     }
 }
