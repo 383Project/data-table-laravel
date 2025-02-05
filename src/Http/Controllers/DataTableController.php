@@ -1,12 +1,12 @@
 <?php
 
-namespace SteJaySulli\LaravelReactDataTable\Http\Controllers\DataTable;
+namespace SteJaySulli\LaravelDataTable\Http\Controllers;
 
-use App\Http\Resources\DataTable\DefaultDataTableResource;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Str;
+use SteJaySulli\LaravelDataTable\Http\Resources\DataTableResource;
 
 abstract class DataTableController extends Controller
 {
@@ -17,9 +17,20 @@ abstract class DataTableController extends Controller
     protected $filterable_fields = [];
     protected $field_labels = [];
     protected $resource_class = null;
+    protected $page_options = [5, 10, 25, 50, 100];
 
     // You must provide this, which should return the base eloquent query object for your datatable
     abstract public function dataQuery(Request $request): Builder;
+
+    public function authorize(Request $request)
+    {
+        return true;
+    }
+
+    public function unauthorizedResponse(Request $request)
+    {
+        return response()->json(['message' => 'Unauthorized'], 403);
+    }
 
     // You can override these functions in your derived class to provide custom search and sort functionality
     public function getHiddenFields(): array
@@ -55,12 +66,17 @@ abstract class DataTableController extends Controller
         return $this->field_labels;
     }
 
+    public function getPageOptions(): array
+    {
+        return $this->page_options;
+    }
+
     public function getResourceClass(): string
     {
         if (!is_null($this->resource_class)) {
             return $this->resource_class;
         }
-        return DefaultDataTableResource::class;
+        return DataTableResource::class;
     }
 
     public function dataSearch($query, $search): void
@@ -119,6 +135,10 @@ abstract class DataTableController extends Controller
 
     public function __invoke(Request $request)
     {
+        if (!$this->authorize($request)) {
+            return $this->unauthorizedResponse($request);
+        }
+
         $per_page = $request->input('per_page', 5);
         $data = $this->dataQuery($request);
 
@@ -141,14 +161,20 @@ abstract class DataTableController extends Controller
             $this->dataSort($data, $sort, $direction);
         }
 
-        return $this->getResourceClass()::collection($data->paginate($per_page))
+        return $this->getResourceClass()::collection(
+            $data
+                ->paginate($per_page)
+        )
             ->additional([
                 "meta" => [
                     "hidden_fields" => $this->getHiddenFields(),
                     "field_labels" => $this->getFieldLabels(),
                     "sortable_fields" => $this->getSortableFields(),
-                    "sort" =>  $sort,
-                    "direction" => $direction,
+                    "searchable_fields" => $this->getSearchableFields(),
+                    "filterable_fields" => $this->getFilterableFields(),
+                    "sort_by" =>  $sort,
+                    "direction" => strtolower($direction),
+                    "page_options" => $this->getPageOptions(),
                 ]
             ]);
     }
