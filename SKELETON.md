@@ -52,7 +52,7 @@ php artisan vendor:publish --tag="data-table-laravel-views"
 ## Usage
 
 ```php
-$laravelDataTable = new ThreeEightThree\LaravelDataTable();
+$laravelDataTable = new Team383\LaravelDataTable();
 echo $laravelDataTable->echoPhrase('Hello, SteJaySulli!');
 ```
 

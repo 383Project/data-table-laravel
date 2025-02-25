@@ -1,5 +1,5 @@
 {
-    "name": "383project/data-table-laravel",
+    "name": "team383/data-table-laravel",
     "description": "A Laravel package to facilitate the creation of dynamic data tables for Eloquent models, allowing sorting, searching, filtering and pagination",
     "keywords": [
         "383project",
@@ -30,13 +30,13 @@
     },
     "autoload": {
         "psr-4": {
-            "ThreeEightThree\\LaravelDataTable\\": "src/",
-            "ThreeEightThree\\LaravelDataTable\\Database\\Factories\\": "database/factories/"
+            "Team383\\LaravelDataTable\\": "src/",
+            "Team383\\LaravelDataTable\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ThreeEightThree\\LaravelDataTable\\Tests\\": "tests/",
+            "Team383\\LaravelDataTable\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -58,10 +58,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ThreeEightThree\\LaravelDataTable\\LaravelDataTableServiceProvider"
+                "Team383\\LaravelDataTable\\LaravelDataTableServiceProvider"
             ],
             "aliases": {
-                "LaravelDataTable": "ThreeEightThree\\LaravelDataTable\\Facades\\LaravelDataTable"
+                "LaravelDataTable": "Team383\\LaravelDataTable\\Facades\\LaravelDataTable"
             }
         }
     },

@@ -1,12 +1,12 @@
 <?php
 
-namespace ThreeEightThree\LaravelDataTable\Http\Controllers;
+namespace Team383\LaravelDataTable\Http\Controllers;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Str;
-use ThreeEightThree\LaravelDataTable\Http\Resources\DataTableResource;
+use Team383\LaravelDataTable\Http\Resources\DataTableResource;
 
 abstract class DataTableController extends Controller
 {

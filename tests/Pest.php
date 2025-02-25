@@ -1,5 +1,5 @@
 <?php
 
-use ThreeEightThree\LaravelDataTable\Tests\TestCase;
+use Team383\LaravelDataTable\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);
