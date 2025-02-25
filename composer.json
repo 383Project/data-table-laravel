@@ -1,12 +1,12 @@
 {
-    "name": "stejaysulli/data-table-laravel",
+    "name": "383project/data-table-laravel",
     "description": "A Laravel package to facilitate the creation of dynamic data tables for Eloquent models, allowing sorting, searching, filtering and pagination",
     "keywords": [
-        "Stephen Sullivan",
+        "383project",
         "laravel",
         "data-table-laravel"
     ],
-    "homepage": "https://github.com/stejaysulli/data-table-laravel",
+    "homepage": "https://github.com/383project/data-table-laravel",
     "license": "MIT",
     "authors": [
         {
