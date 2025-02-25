@@ -30,13 +30,13 @@
     },
     "autoload": {
         "psr-4": {
-            "SteJaySulli\\LaravelDataTable\\": "src/",
-            "SteJaySulli\\LaravelDataTable\\Database\\Factories\\": "database/factories/"
+            "ThreeEightThree\\LaravelDataTable\\": "src/",
+            "ThreeEightThree\\LaravelDataTable\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "SteJaySulli\\LaravelDataTable\\Tests\\": "tests/",
+            "ThreeEightThree\\LaravelDataTable\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -58,10 +58,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SteJaySulli\\LaravelDataTable\\LaravelDataTableServiceProvider"
+                "ThreeEightThree\\LaravelDataTable\\LaravelDataTableServiceProvider"
             ],
             "aliases": {
-                "LaravelDataTable": "SteJaySulli\\LaravelDataTable\\Facades\\LaravelDataTable"
+                "LaravelDataTable": "ThreeEightThree\\LaravelDataTable\\Facades\\LaravelDataTable"
             }
         }
     },
