@@ -1,6 +1,6 @@
 <?php
 
-namespace SteJaySulli\LaravelDataTable\Commands;
+namespace ThreeEightThree\LaravelDataTable\Commands;
 
 use Illuminate\Console\Command;
 

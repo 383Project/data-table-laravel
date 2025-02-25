@@ -2,7 +2,7 @@
 
 namespace {{ namespace }};
 
-use SteJaySulli\LaravelDataTable\Http\Controllers\DataTableController{{ as_datatable_controller }};
+use ThreeEightThree\LaravelDataTable\Http\Controllers\DataTableController{{ as_datatable_controller }};
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use {{ namespaced_model }};

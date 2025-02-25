@@ -1,10 +1,10 @@
 <?php
 
-namespace SteJaySulli\LaravelDataTable\Tests;
+namespace ThreeEightThree\LaravelDataTable\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use SteJaySulli\LaravelDataTable\LaravelDataTableServiceProvider;
+use ThreeEightThree\LaravelDataTable\LaravelDataTableServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,7 +13,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'SteJaySulli\\LaravelDataTable\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn(string $modelName) => 'ThreeEightThree\\LaravelDataTable\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 
