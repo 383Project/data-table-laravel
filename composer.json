@@ -1,12 +1,12 @@
 {
-    "name": "stejaysulli/data-table-laravel",
+    "name": "team383/data-table-laravel",
     "description": "A Laravel package to facilitate the creation of dynamic data tables for Eloquent models, allowing sorting, searching, filtering and pagination",
     "keywords": [
-        "Stephen Sullivan",
+        "383project",
         "laravel",
         "data-table-laravel"
     ],
-    "homepage": "https://github.com/stejaysulli/data-table-laravel",
+    "homepage": "https://github.com/383project/data-table-laravel",
     "license": "MIT",
     "authors": [
         {
@@ -30,13 +30,13 @@
     },
     "autoload": {
         "psr-4": {
-            "SteJaySulli\\LaravelDataTable\\": "src/",
-            "SteJaySulli\\LaravelDataTable\\Database\\Factories\\": "database/factories/"
+            "Team383\\LaravelDataTable\\": "src/",
+            "Team383\\LaravelDataTable\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "SteJaySulli\\LaravelDataTable\\Tests\\": "tests/",
+            "Team383\\LaravelDataTable\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -58,10 +58,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SteJaySulli\\LaravelDataTable\\LaravelDataTableServiceProvider"
+                "Team383\\LaravelDataTable\\LaravelDataTableServiceProvider"
             ],
             "aliases": {
-                "LaravelDataTable": "SteJaySulli\\LaravelDataTable\\Facades\\LaravelDataTable"
+                "LaravelDataTable": "Team383\\LaravelDataTable\\Facades\\LaravelDataTable"
             }
         }
     },

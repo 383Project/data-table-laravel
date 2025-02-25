@@ -1,16 +1,16 @@
 <?php
 
-namespace SteJaySulli\LaravelDataTable\Facades;
+namespace Team383\LaravelDataTable\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \SteJaySulli\LaravelDataTable\LaravelDataTable
+ * @see \Team383\LaravelDataTable\LaravelDataTable
  */
 class LaravelDataTable extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \SteJaySulli\LaravelDataTable\LaravelDataTable::class;
+        return \Team383\LaravelDataTable\LaravelDataTable::class;
     }
 }

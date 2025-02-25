@@ -1,6 +1,6 @@
 <?php
 
-namespace SteJaySulli\LaravelDataTable\Http\Resources;
+namespace Team383\LaravelDataTable\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;

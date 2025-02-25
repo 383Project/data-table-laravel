@@ -1,6 +1,6 @@
 <?php
 
-namespace SteJaySulli\LaravelDataTable\Commands;
+namespace Team383\LaravelDataTable\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 
