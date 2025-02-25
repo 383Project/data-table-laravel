@@ -1,5 +1,5 @@
 <?php
 
-namespace SteJaySulli\LaravelDataTable;
+namespace ThreeEightThree\LaravelDataTable;
 
 class LaravelDataTable {}

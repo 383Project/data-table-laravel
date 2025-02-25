@@ -1,11 +1,11 @@
 <?php
 
-namespace SteJaySulli\LaravelDataTable;
+namespace ThreeEightThree\LaravelDataTable;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use SteJaySulli\LaravelDataTable\Commands\DataTableMakeCommand;
-use SteJaySulli\LaravelDataTable\Commands\LaravelDataTableCommand;
+use ThreeEightThree\LaravelDataTable\Commands\DataTableMakeCommand;
+use ThreeEightThree\LaravelDataTable\Commands\LaravelDataTableCommand;
 
 class LaravelDataTableServiceProvider extends PackageServiceProvider
 {
